@@ -1,3 +1,7 @@
 Practise of Algorithms
 
-[Resources](https://algs4.cs.princeton.edu/code)
+
+## Reference
+[Cheatsheet](https://algs4.cs.princeton.edu/cheatsheet/)
+
+[Code, Test Data](https://algs4.cs.princeton.edu/code)

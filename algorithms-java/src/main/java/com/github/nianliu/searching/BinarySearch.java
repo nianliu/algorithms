@@ -7,9 +7,34 @@ import java.util.Scanner;
 
 public class BinarySearch {
 
-    private static final String FILE = "/Users/nliu/workspace/learning/algorithms/test_data/tinyT.txt";
+    /**
+     * @param array  Must be a sorted array
+     * @param target Target to search
+     * @return
+     */
+    public static int search(int[] array, int target) {
+        int low = 0;
+        int high = array.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (array[mid] == target) {
+                return mid;
+            }
+            if (array[mid] > target) {
+                high = mid - 1;
+            }
+
+            if (array[mid] < target) {
+                low = mid + 1;
+            }
+        }
+
+        return -1;
+    }
 
     public static void main(String[] args) {
+        final String FILE = "/Users/nliu/workspace/learning/algorithms/test_data/tinyT.txt";
         int[] ints = In.readInts(FILE);
         Scanner scanner = new Scanner(System.in);
 
@@ -29,26 +54,5 @@ public class BinarySearch {
 
             line = scanner.nextLine();
         }
-    }
-
-    private static int search(int[] array, int target) {
-        int low = 0;
-        int high = array.length - 1;
-
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            if (array[mid] == target) {
-                return mid;
-            }
-            if (array[mid] > target) {
-                high = mid - 1;
-            }
-
-            if (array[mid] < target) {
-                low = mid + 1;
-            }
-        }
-
-        return -1;
     }
 }
